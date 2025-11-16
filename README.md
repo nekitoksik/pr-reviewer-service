@@ -40,7 +40,7 @@
 - `teams(team_name)` — команды
 - `users(user_id, username, team_name, is_active)` — пользователи и их активность
 - `pull_requests(pull_request_id, pull_request_name, author_id, status, created_at, merged_at)` — PR и их статусы
-- `pr_reviewers(pull_request_id, reviewer_id)` — связи PR–ревьюверы.[file:94]
+- `pr_reviewers(pull_request_id, reviewer_id)` — связи PR–ревьюверы.
 
 ## Запуск
 
@@ -48,7 +48,7 @@
 
 - Go (версия указана в `go.mod`);
 - Docker и docker-compose;
-- PostgreSQL (поднимается через docker-compose или локально).[file:94]
+- PostgreSQL (поднимается через docker-compose или локально).
 
 ### Конфигурация
 
@@ -64,7 +64,7 @@ DB_PASSWORD=postgres
 DB_NAME=pr_reviewer
 ```
 
-`config` загружает эти значения через `cleanenv` и использует для подключения к БД и настройки HTTP-сервера.[file:94]
+`config` загружает эти значения через `cleanenv` и использует для подключения к БД и настройки HTTP-сервера.
 
 ### Запуск через docker-compose
 
@@ -191,3 +191,4 @@ golangci-lint run ./...
 - После `merge` изменение списка ревьюверов запрещено — соответствующие запросы возвращают ошибку `PR_MERGED`
 - Идентификаторы (`user_id`, `team_name`, `pull_request_id`) хранятся как строки, без surrogate key — этого достаточно для ограниченного объёма данных в рамках задания
 - Миграции применяются при старте сервиса из папки `migrations` в корне проекта.
+
