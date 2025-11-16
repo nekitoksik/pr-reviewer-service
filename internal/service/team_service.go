@@ -7,11 +7,11 @@ import (
 )
 
 type TeamService struct {
-	teams repo.TeamRepo
-	users repo.UserRepo
+	teams repo.Team
+	users repo.User
 }
 
-func NewTeamService(teams repo.TeamRepo, users repo.UserRepo) *TeamService {
+func NewTeamService(teams repo.Team, users repo.User) *TeamService {
 	return &TeamService{teams: teams, users: users}
 }
 

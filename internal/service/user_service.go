@@ -7,11 +7,11 @@ import (
 )
 
 type UserService struct {
-	users repo.UserRepo
-	prs   repo.PullRequestRepo
+	users repo.User
+	prs   repo.PullRequest
 }
 
-func NewUserService(users repo.UserRepo, prs repo.PullRequestRepo) *UserService {
+func NewUserService(users repo.User, prs repo.PullRequest) *UserService {
 	return &UserService{
 		users: users,
 		prs:   prs,

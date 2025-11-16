@@ -14,6 +14,11 @@ func RunMigrations(cfg *config.Config) error {
 		cfg.DB.MigrationsPath,
 		cfg.DB.URL,
 	)
+	migrationsPath := cfg.DB.MigrationsPath
+	if migrationsPath == "" {
+		migrationsPath = "migrations"
+	}
+
 	if err != nil {
 		return fmt.Errorf("migrate: failed to create migrations: %w", err)
 	}

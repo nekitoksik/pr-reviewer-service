@@ -8,12 +8,12 @@ import (
 )
 
 type PRService struct {
-	prs   repo.PullRequestRepo
-	users repo.UserRepo
-	teams repo.TeamRepo
+	prs   repo.PullRequest
+	users repo.User
+	teams repo.Team
 }
 
-func NewPRService(prs repo.PullRequestRepo, users repo.UserRepo, teams repo.TeamRepo) *PRService {
+func NewPRService(prs repo.PullRequest, users repo.User, teams repo.Team) *PRService {
 	return &PRService{
 		prs:   prs,
 		users: users,

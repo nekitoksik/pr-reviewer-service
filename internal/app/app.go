@@ -57,10 +57,10 @@ func Run() {
 
 	//services
 	log.Info("Initializing services...")
-	teamService := service.NewTeamService(*teamRepo, *userRepo)
-	userService := service.NewUserService(*userRepo, *prRepo)
-	prService := service.NewPRService(*prRepo, *userRepo, *teamRepo)
-	statsService := service.NewStatsService(*statsRepo)
+	teamService := service.NewTeamService(teamRepo, userRepo)
+	userService := service.NewUserService(userRepo, prRepo)
+	prService := service.NewPRService(prRepo, userRepo, teamRepo)
+	statsService := service.NewStatsService(statsRepo)
 
 	r := httptransport.NewRouter(httptransport.Dependencies{
 		TeamService:  teamService,

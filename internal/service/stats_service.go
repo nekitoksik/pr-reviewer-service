@@ -7,10 +7,10 @@ import (
 )
 
 type StatsService struct {
-	stats repo.StatsRepo
+	stats repo.Stats
 }
 
-func NewStatsService(stats repo.StatsRepo) *StatsService {
+func NewStatsService(stats repo.Stats) *StatsService {
 	return &StatsService{stats: stats}
 }
 
